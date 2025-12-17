@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from possessionnet.types import PossessionTimeSeries, PossessionSample
 import cv2
 
 @dataclass(frozen=True)
@@ -47,3 +48,15 @@ def estimate_possession(video_path: str) -> PossessionResult:
         frame_count=frame_count,
         duration_seconds=duration_seconds,
     )
+
+def estimate_possession_series(video_path: str, sample_every_seconds: float = 1.0) -> PossessionTimeSeries:
+    meta = estimate_possession(video_path)  # your current metadata result
+    samples = []
+
+    # Placeholder: unknown possession at each sample time
+    t = 0.0
+    while t <= meta.duration_seconds:
+        samples.append(PossessionSample(t_seconds=t, team=None, confidence=0.0))
+        t += sample_every_seconds
+
+    return PossessionTimeSeries(video=meta, samples=samples)
