@@ -28,7 +28,7 @@ Run the module CLI:
 python -m possessionnet /path/to/video.mp4
 ```
 
-#### Output
+#### Current Output
 
 ```
 fps: 29.97
@@ -44,17 +44,6 @@ Run the quickstart example:
 ```
 python examples/quickstart.py /path/to/video.mp4
 ```
-
-## Current Output
-
-At this stage, the pipeline returns video metadata such as:
-
-- fps
-- frame_count
-- duration_seconds
-
-This provides a stable base for future work such as player tracking, ball
-detection, team classification, and possession estimation.
 
 ## Development
 
