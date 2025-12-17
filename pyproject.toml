@@ -12,6 +12,9 @@ license = { file = "LICENSE" }
 authors = [{ name = "Eliana Lopez" }]
 dependencies = []
 
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 

@@ -4,9 +4,6 @@ __pycache__/
 *.pyd
 .venv/
 .env
-dist/
-build/
 *.egg-info/
-.ipynb_checkpoints/
+.eggs/
 .vscode/
-.idea/
