@@ -10,13 +10,31 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 authors = [{ name = "Eliana Lopez" }]
-dependencies = []
+
+dependencies = [
+  "numpy>=1.23",
+  "opencv-python-headless>=4.8",
+]
 
 [project.optional-dependencies]
-dev = ["pytest>=7"]
+viz = [
+  "opencv-python>=4.8",
+]
+
+dev = [
+  "pytest>=8",
+  "ruff>=0.6",
+]
+
+[project.urls]
+Repository = "https://github.com/elianalopez/PossessionNet"
+Issues = "https://github.com/elianalopez/PossessionNet/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
